@@ -21,6 +21,7 @@
   --color-default: #0a0d13;
   --color-primary: #0d42ff;
   --color-secondary: #0e1d34;
+  --color-yellow : #fbb311;
 }
 
 /* Smooth scroll behavior */
@@ -93,7 +94,7 @@ section {
   display: block;
   width: 50px;
   height: 3px;
-  background: var(--color-primary);
+  background: var(--color-yellow);
   left: 0;
   right: 0;
   bottom: 0;
@@ -134,16 +135,22 @@ section {
 # Breadcrumbs
 --------------------------------------------------------------*/
 .breadcrumbs .page-header {
-  padding: 140px 0 80px 0;
+  background-image: url('../img/back-breadcrumbs.jpg');
+  height: 300px;
+  clip-path: ellipse(99% 100% at 50% 0%);
   position: relative;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  h1{
+    color: white;
+    margin-top: 20px;
+  }
 }
 
 .breadcrumbs .page-header:before {
   content: "";
-  background-color: rgba(14, 29, 52, 0.8);
+  background: linear-gradient(90deg, rgb(14 29 52 / 79%) 0%, #1f324e 100%);
   position: absolute;
   inset: 0;
 }
@@ -159,10 +166,7 @@ section {
   color: rgba(255, 255, 255, 0.8);
 }
 
-.breadcrumbs nav {
-  background-color: #f3f6fc;
-  padding: 20px 0;
-}
+ 
 
 .breadcrumbs nav ol {
   display: flex;
@@ -186,6 +190,7 @@ section {
 
 .breadcrumbs nav ol li+li {
   padding-left: 10px;
+  color: white;
 }
 
 .breadcrumbs nav ol li+li::before {
@@ -308,7 +313,7 @@ section {
 .header {
   transition: all 0.5s;
   z-index: 997;
-  padding: 10px 0;
+  padding: 10px 20px;
 }
 
 .header.sticked {
@@ -333,7 +338,7 @@ section {
 /*--------------------------------------------------------------
 # Desktop Navigation
 --------------------------------------------------------------*/
-@media (min-width: 1280px) {
+@media (min-width: 900px) {
   .navbar {
     padding: 0;
   }
@@ -451,7 +456,7 @@ section {
   }
 }
 
-@media (min-width: 1280px) and (max-width: 1366px) {
+@media (min-width: 900px) and (max-width: 1366px) {
   .navbar .dropdown .dropdown ul {
     left: -90%;
   }
@@ -461,7 +466,7 @@ section {
   }
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 900px) {
 
   .mobile-nav-show,
   .mobile-nav-hide {
@@ -472,7 +477,7 @@ section {
 /*--------------------------------------------------------------
 # Mobile Navigation
 --------------------------------------------------------------*/
-@media (max-width: 1279px) {
+@media (max-width: 901px) {
   .navbar {
     position: fixed;
     top: 0;
@@ -1836,7 +1841,7 @@ section {
   display: block;
   width: 20px;
   height: 3px;
-  background: var(--color-primary);
+  background: var(--color-yellow);
   left: 0;
   right: 0;
   bottom: 0;

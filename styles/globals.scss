@@ -108,14 +108,12 @@ a{
     span{
         color: #ffffff12;
     }
-    h2::after{
-        background:#0d6efd;
-    }
+    
     }
 }
  
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 900px) {
     .icon-menu {
      display: none;
     }
