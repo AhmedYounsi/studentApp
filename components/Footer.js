@@ -2,6 +2,7 @@ import React from 'react'
 import { FaFacebookF, FaTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa'
 import Link from 'next/link'
 import { useRouter } from 'next/router';
+import Image from 'next/image';
 
 function Footer() {
   const router = useRouter();
@@ -15,9 +16,11 @@ function Footer() {
 <div className="back-about"></div>
       <div className="container">
         <div className="row gy-4">
-          <div className="col-lg-4 col-md-12 footer-info">
+          <div className="col-md-4 col-12 footer-info">
             <a href="index.html" className="logo d-flex align-items-center">
-              <img src="/assets/img/aprims_white_2.png" alt="" />
+            <div className="logo-div">
+       <Image layout='fill' src="/assets/img/aprims_white_2.png" alt="" />
+       </div>
             </a>
             <p>
             APRIMS est un réseau international des professionnels et des entrepreneurs 
@@ -25,7 +28,7 @@ function Footer() {
              travaillons selon nos objectifs et nos valeurs communes 
             afin de contribuer notre expertise au développement économique
             </p>
-            <div className="social-links d-flex mt-4">
+            <div className="social-links d-flex justify-content-center mt-4">
               <a href="#" className="twitter">
                 <FaTwitter />
               </a>
@@ -41,7 +44,7 @@ function Footer() {
             </div>
           </div>
 
-          <div className="col-lg-4 col-6 footer-links">
+          <div className="col-md-4 col-sm-6 col-6 footer-links">
             <h4>Liens utiles</h4>
             <ul>
             <li>
@@ -82,7 +85,7 @@ function Footer() {
             </ul>
           </div> */}
 
-          <div className="col-lg-4 col-md-12 footer-links">
+          <div className="col-md-4 col-sm-6 col-6 footer-links">
             <h4>Contact</h4>
             <p>
               A108 Adam Street  <br />
