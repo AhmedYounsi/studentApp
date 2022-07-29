@@ -3,7 +3,9 @@ p,
     font-family: 'Ubuntu', sans-serif !important;
 
 }
-
+.over-hidden{
+    overflow: hidden;
+}
 section {
     position: relative;
 }
@@ -172,6 +174,13 @@ a {
         .active{
             color: white !important;
         }
+    }
+}
+.faq{
+    .accordion-button svg{
+        font-size: 20px;
+    margin-right: 9px;
+    color: #4285f4;
     }
 }
 

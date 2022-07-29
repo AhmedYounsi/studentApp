@@ -27,9 +27,12 @@ function Header() {
     <header id="header" className="header d-flex align-items-center fixed-top">
       <div className={"nav-side " + (NavShow ? "show-nav" : "")}>
         <div className="head">
-          <a href="index.html" className="logo d-flex align-items-center">
+          <Link href='/'>
+          <a className="logo d-flex align-items-center">
             <img src="/assets/img/aprims_white_2.png" alt="" />
           </a>
+          </Link>
+       
           <div onClick={() => setNavShow(false)} className='icon-menu'>
             <AiOutlineMenuFold />
           </div>
@@ -65,9 +68,11 @@ function Header() {
       </div>
       <div className="container-fluid container-xl d-flex align-items-center justify-content-between">
 
-        <a href="index.html" className="logo d-flex align-items-center">
-          <img src="/assets/img/aprims_white_2.png" alt="" />
-        </a>
+      <Link href='/'>
+          <a className="logo d-flex align-items-center">
+            <img src="/assets/img/aprims_white_2.png" alt="" />
+          </a>
+          </Link>
         <div onClick={() => setNavShow(true)} className='icon-menu'>
           <AiOutlineMenuUnfold />
         </div>
