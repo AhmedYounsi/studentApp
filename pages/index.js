@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Link from 'next/link';
+import Head from 'next/head';
 
 function Home() {
   useEffect(() => {
@@ -10,6 +11,9 @@ function Home() {
 
   return (
     <div className='_Home'>
+        <Head>
+        <title>APRIM Agir Pour la Révolution Industrielle et Monaitaire et Sociale</title>
+      </Head>
       <section id="hero" className="hero d-flex align-items-center">
         <div className="container">
           <div className="row gy-4 d-flex justify-content-between">
