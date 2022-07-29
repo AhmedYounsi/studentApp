@@ -18,9 +18,7 @@ function Footer() {
         <div className="row gy-4">
           <div className="col-md-4 col-12 footer-info">
             <a href="index.html" className="logo d-flex align-items-center">
-            <div className="logo-div">
-       <Image layout='fill' src="/assets/img/aprims_white_2.png" alt="" />
-       </div>
+            <img src="/assets/img/aprims_white_2.png" alt="" />
             </a>
             <p>
             APRIMS est un réseau international des professionnels et des entrepreneurs 

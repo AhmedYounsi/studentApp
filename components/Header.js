@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
 import { AiOutlineMenuUnfold, AiOutlineMenuFold } from 'react-icons/ai'
 import { useRouter } from 'next/router';
 function Header() {
@@ -29,9 +28,7 @@ function Header() {
       <div className={"nav-side " + (NavShow ? "show-nav" : "")}>
         <div className="head">
           <a href="index.html" className="logo d-flex align-items-center">
-          <div className="logo-div">
-       <Image layout='fill' src="/assets/img/aprims_white_2.png" alt="" />
-       </div>
+            <img src="/assets/img/aprims_white_2.png" alt="" />
           </a>
           <div onClick={() => setNavShow(false)} className='icon-menu'>
             <AiOutlineMenuFold />
@@ -69,9 +66,7 @@ function Header() {
       <div className="container-fluid container-xl d-flex align-items-center justify-content-between">
 
         <a href="index.html" className="logo d-flex align-items-center">
-       <div className="logo-div">
-       <Image layout='fill' src="/assets/img/aprims_white_2.png" alt="" />
-       </div>
+          <img src="/assets/img/aprims_white_2.png" alt="" />
         </a>
         <div onClick={() => setNavShow(true)} className='icon-menu'>
           <AiOutlineMenuUnfold />

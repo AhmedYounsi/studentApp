@@ -8,13 +8,11 @@ section {
     position: relative;
 }
 
- 
-   .logo-div{
-    width: 150px;
-    height: 25px;
-    position: relative;
-   }
- 
+.logo {
+    img {
+        width: 150px;
+    }
+}
 
 h1,
 h2,
@@ -186,6 +184,7 @@ a {
         display: none;
     }
 }
+
 @media screen and (max-width: 600px) {
     .page-header{
         clip-path: ellipse(150% 100% at 50% 0%) !important;
