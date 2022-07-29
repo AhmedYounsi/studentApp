@@ -1,6 +1,17 @@
-import React from 'react'
-
+import React, { useEffect } from 'react'
+import Link from 'next/link'
+import {AiOutlineMenuUnfold} from 'react-icons/ai'
 function Header() {
+  useEffect(() => {
+    window.onscroll = function (e) {
+      const element = document.querySelector(".header");
+      if (window.scrollY > 110) {
+        element.classList.add("scrolled-header");
+      } else {
+        element.classList.remove("scrolled-header");
+      }
+    };
+  }, []);
   return (
     <header id="header" className="header d-flex align-items-center fixed-top">
     <div className="container-fluid container-xl d-flex align-items-center justify-content-between">
@@ -8,17 +19,25 @@ function Header() {
       <a href="index.html" className="logo d-flex align-items-center">
         <img src="/assets/img/aprims_white.png" alt="" />
       </a>
-
-      <i className="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
-      <i className="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+     <div className='icon-menu'>
+     <AiOutlineMenuUnfold />
+     </div>
       <nav id="navbar" className="navbar">
         <ul>
-          <li><a href="index.html" className="active">Accueil</a></li>
-          <li><a href="about.html">Présentation</a></li>
+        
+          <li>
+          <Link href='/'>
+          <a>Accueil</a>
+         </Link></li>
+          <li>
+          <Link href='/presentation'>
+          <a>Présentation</a>
+         </Link>
+            </li>
           <li><a href="services.html">Notre cible</a></li>
           <li><a href="pricing.html">Nos actions</a></li>
           <li><a href="contact.html">Contact</a></li>
-          <li><a className="get-a-quote" href="get-a-quote.html">Connextion</a></li>
+          <li><a className="get-a-quote" href="#">Connextion</a></li>
         </ul>
       </nav>
 
