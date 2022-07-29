@@ -1953,6 +1953,8 @@ section {
   transition: 0.3s;
   display: inline-block;
   line-height: 1;
+  position: relative;
+  height: 17px;
 }
 
 .footer .footer-links ul a:hover {

@@ -10,5 +10,4 @@ function cible() {
     </div>
   )
 }
-
 export default cible

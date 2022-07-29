@@ -4,8 +4,8 @@ function Breadcrumbs(props) {
   return (
     <div className="breadcrumbs">
     <div  className="page-header d-flex align-items-center">
-      <div  data-aos="flip-left" className="container position-relative">
-        <h1> {props.title}
+      <div  className="container position-relative">
+        <h1 data-aos="flip-left"> {props.title}
         <br />
         {props.title2}
          </h1>

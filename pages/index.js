@@ -23,12 +23,12 @@ function Home() {
               <h1>Agir Pour la Révolution Industrielle et Monaitaire et Sociale</h1>
               <p>
                 La mission de APRIMS est de mettre en relation professionnels et entrepreneurs
-                afin d'agir comme catalyseur du développement économique
+                afin d{"'"}agir comme catalyseur du développement économique
               </p>
 
               <form action="#" className="form-search d-flex align-items-stretch mb-3"  >
                 <input type="text" className="form-control" placeholder="S'inscrire à notre newsletter" />
-                <button type="submit" className="btn btn-primary">S'inscrire</button>
+                <button type="submit" className="btn btn-primary">S{"'"}inscrire</button>
               </form>
 
               <div className="row gy-4 justify-content-center"  >
@@ -91,14 +91,14 @@ function Home() {
                 <li>
                   <img src="/assets/img/icons/icone_4.png" alt="" />
                   <div>
-                    <h3>Les influenceurs d'opinion publique</h3>
+                    <h3>Les influenceurs d{"'"}opinion publique</h3>
                     <p>Nous identifions et mobilisons la diaspora, ainsi que faisons du lobbying dans différentes villes à travers le monde. </p>
                   </div>
                 </li>
                 <li>
                   <img src="/assets/img/icons/icone_1.png" alt="" />
                   <div>
-                    <h3>Les professionnels d'un secteur économique</h3>
+                    <h3>Les professionnels d{"'"}un secteur économique</h3>
                     <p>Nous mettons en contact des professionnels et des entrepreneurs dans le business dans de nombreuses villes.</p>
                   </div>
                 </li>
@@ -112,8 +112,8 @@ function Home() {
                 <li >
                   <img src="/assets/img/icons/icone_2.png" alt="" />
                   <div>
-                    <h3>La création d'emplois dans l'économie</h3>
-                    <p>Nous développons des projets qui contribuent à la création d'emplois et à la croissance économique</p>
+                    <h3>La création d{"'"}emplois dans l{"'"}économie</h3>
+                    <p>Nous développons des projets qui contribuent à la création d{"'"}emplois et à la croissance économique</p>
                   </div>
                 </li>
 
@@ -135,8 +135,8 @@ function Home() {
             </div>
               <p>
                 Gagner de nouveaux contacts, enrichir votre réseau professionnel
-                et soigner votre communication font également partie de votre job de chef d'entreprise.
-                Vous disposez de toute l'information de nos actions dont vous avez besoin dans
+                et soigner votre communication font également partie de votre job de chef d{"'"}entreprise.
+                Vous disposez de toute l{"'"}information de nos actions dont vous avez besoin dans
                 le cadre de votre projet entrepreneurial.</p>
               <Link href="actions">
                 <a className='cta-btn'>Voir plus</a>
