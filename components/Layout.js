@@ -1,13 +1,14 @@
  
 import React from 'react'
+import Header from './Header'
 function Layout({children}) {
   return (
     <div>
-    <p>Header</p>
+   <Header />  
      <div className='routes'>
      {children}
      </div>
-    <p>Footer</p>
+   
     </div>
   )
 }
