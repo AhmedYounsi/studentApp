@@ -1,38 +1,58 @@
 p,
 * {
     font-family: 'Ubuntu', sans-serif !important;
- 
+
 }
-section{
+
+section {
     position: relative;
 }
+
 .logo {
     img {
         width: 150px;
     }
 }
-h1,h2,h3,h4,h5,h6,p,a{
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a {
     margin-bottom: 0px;
 }
-a{
+
+a {
     text-decoration: none !important;
 }
-.routes{
+
+.routes {
     min-height: 100vh;
 }
-.container{
+
+.container {
     position: relative;
 }
-.scrolled-header{
+
+.scrolled-header {
     background: linear-gradient(90deg, rgb(14 29 52) 0%, #1f324e 100%);
 }
-.header{
-    svg{
+
+.header {
+    svg {
         color: white;
-    font-size: 35px;
-    cursor: pointer;
+        font-size: 35px;
+        cursor: pointer;
+    }
+
+    svg:active {
+        opacity: 0.3;
     }
 }
+
 .heading {
     font-size: 30px;
     font-weight: 500;
@@ -67,7 +87,8 @@ a{
     }
 
 }
-.footer{
+
+.footer {
     .back-about {
         position: absolute;
         left: 0;
@@ -81,6 +102,7 @@ a{
         background-position: center;
     }
 }
+
 .about {
     .back-about {
         position: absolute;
@@ -100,20 +122,19 @@ a{
     }
 }
 
-.call-to-action{
-    .section-header{
-    h2{
-        color: white;
-    }
-    span{
-        color: #ffffff12;
-    }
-    
+.call-to-action {
+    .section-header {
+        h2 {
+            color: white;
+        }
+
+        span {
+            color: #ffffff12;
+        }
     }
 }
 
-.active::after{
-    
+.active::after {
     content: "";
     position: absolute;
     left: 0;
@@ -121,13 +142,45 @@ a{
     width: 50%;
     max-width: 30px;
     height: 2px;
-    background: #0d42ff;
+    background: #0d6efd;
 }
 
- 
+.nav-side {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: #020810fa;
+    transition: .3s;
+    transform: translateX(-100%);
+
+    .head {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 35px;
+    }
+    .ul-side{
+        li{
+            margin: 10px 0px;
+        }
+        a{
+            position: relative;
+            color: #787878;
+            font-size: 25px;
+        }
+        .active{
+            color: white !important;
+        }
+    }
+}
+
+.show-nav {
+    transform: translateX(0%) !important;
+}
 
 @media screen and (min-width: 900px) {
     .icon-menu {
-     display: none;
+        display: none;
     }
-  }
+}

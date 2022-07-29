@@ -19,7 +19,7 @@
 /* Colors */
 :root {
   --color-default: #0a0d13;
-  --color-primary: #0d42ff;
+  --color-primary:#0d6efd;
   --color-secondary: #0e1d34;
   --color-yellow : #fbb311;
 }
@@ -135,7 +135,7 @@ section {
 # Breadcrumbs
 --------------------------------------------------------------*/
 .breadcrumbs .page-header {
-  background-image: url('../img/back-breadcrumbs.jpg');
+  background:linear-gradient(90deg, rgb(9 16 26 / 77%) 0%, #1f324e 100%), url('../img/back-breadcrumbs.jpg');
   height: 300px;
   clip-path: ellipse(99% 100% at 50% 0%);
   position: relative;
@@ -148,20 +148,13 @@ section {
   }
 }
 
-.breadcrumbs .page-header:before {
-  content: "";
-  background: linear-gradient(90deg, rgb(9 16 26 / 77%) 0%, #1f324e 100%);
-  position: absolute;
-  inset: 0;
-}
-
+ 
 .breadcrumbs .page-header h2 {
   font-size: 56px;
   font-weight: 500;
   color: #fff;
   font-family: var(--font-secondary);
 }
-
 .breadcrumbs .page-header p {
   color: rgba(255, 255, 255, 0.8);
 }
@@ -1831,8 +1824,8 @@ section {
   font-size: 32px;
   display: block;
   font-weight: 700;
-  margin-bottom: 15px;
-  padding-bottom: 15px;
+  margin-bottom: 5px;
+  padding-bottom:5px;
   position: relative;
 }
 
