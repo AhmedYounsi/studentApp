@@ -1,7 +1,14 @@
 import React from 'react'
 import { FaFacebookF, FaTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa'
+import Link from 'next/link'
+import { useRouter } from 'next/router';
 
 function Footer() {
+  const router = useRouter();
+
+  const Active = (route) => {
+    return router.pathname == `${route}` ? "active" : "";
+  };
   return (
     <footer id="footer" className="footer">
 <div className="back-about"></div>
@@ -36,11 +43,30 @@ function Footer() {
           <div className="col-lg-4 col-6 footer-links">
             <h4>Liens utiles</h4>
             <ul>
-              <li><a href="#">Acceuil</a></li>
-              <li><a href="#">Présentation</a></li>
-              <li><a href="#">Notre cible</a></li>
-              <li><a href="#">Nos actions</a></li>
-              <li><a href="#">Contact</a></li>
+            <li>
+          <Link href='/'>
+          <a className={Active("/")}>Accueil</a>
+         </Link></li>
+          <li>
+          <Link href='/presentation'>
+          <a className={Active("/presentation")}>Présentation</a>
+         </Link>
+            </li>
+          <li>
+          <Link href='/cible'>
+          <a className={Active("/cible")}>Notre cible</a>
+         </Link>
+            </li>
+          <li>
+          <Link href='/actions'>
+          <a className={Active("/actions")}>Nos actions</a>
+         </Link>
+            </li>
+          <li>
+          <Link href='/contact'>
+          <a className={Active("/contact")}>Contact</a>
+         </Link>
+            </li>
             </ul>
           </div>
 

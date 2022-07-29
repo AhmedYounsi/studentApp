@@ -1,7 +1,10 @@
 import React, { useEffect } from 'react'
 import Link from 'next/link'
 import {AiOutlineMenuUnfold} from 'react-icons/ai'
+import { useRouter } from 'next/router';
 function Header() {
+  const router = useRouter();
+
   useEffect(() => {
     window.onscroll = function (e) {
       const element = document.querySelector(".header");
@@ -12,6 +15,10 @@ function Header() {
       }
     };
   }, []);
+
+  const Active = (route) => {
+    return router.pathname == `${route}` ? "active" : "";
+  };
   return (
     <header id="header" className="header d-flex align-items-center fixed-top">
     <div className="container-fluid container-xl d-flex align-items-center justify-content-between">
@@ -27,26 +34,26 @@ function Header() {
         
           <li>
           <Link href='/'>
-          <a>Accueil</a>
+          <a className={Active("/")}>Accueil</a>
          </Link></li>
           <li>
           <Link href='/presentation'>
-          <a>Présentation</a>
+          <a className={Active("/presentation")}>Présentation</a>
          </Link>
             </li>
           <li>
           <Link href='/cible'>
-          <a>Notre cible</a>
+          <a className={Active("/cible")}>Notre cible</a>
          </Link>
             </li>
           <li>
           <Link href='/actions'>
-          <a>Nos actions</a>
+          <a className={Active("/actions")}>Nos actions</a>
          </Link>
             </li>
           <li>
           <Link href='/contact'>
-          <a>Contact</a>
+          <a className={Active("/contact")}>Contact</a>
          </Link>
             </li>
           <li><a className="get-a-quote" href="#">Connextion</a></li>

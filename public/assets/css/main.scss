@@ -150,7 +150,7 @@ section {
 
 .breadcrumbs .page-header:before {
   content: "";
-  background: linear-gradient(90deg, rgb(14 29 52 / 79%) 0%, #1f324e 100%);
+  background: linear-gradient(90deg, rgb(9 16 26 / 77%) 0%, #1f324e 100%);
   position: absolute;
   inset: 0;
 }
@@ -357,10 +357,11 @@ section {
 
   .navbar a,
   .navbar a:focus {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 0 10px 30px;
+    margin: 0 10px;
     font-family: var(--font-primary);
     font-size: 16px;
     font-weight: 400;

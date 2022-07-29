@@ -111,6 +111,19 @@ a{
     
     }
 }
+
+.active::after{
+    
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 50%;
+    max-width: 30px;
+    height: 2px;
+    background: #0d42ff;
+}
+
  
 
 @media screen and (min-width: 900px) {
