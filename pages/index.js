@@ -71,9 +71,7 @@ function Home() {
             <div className="section-header">
               <span>Présentation</span>
               <h2>Présentation</h2>
-
-            </div>
-
+            </div>  
             <p className='text'>
               APRIMS est un réseau international des professionnels et des entrepreneurs
               ambitieux et compétents qui évoluent dans différents secteurs
