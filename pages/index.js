@@ -4,6 +4,7 @@ import 'aos/dist/aos.css';
 import Link from 'next/link';
 import Head from 'next/head';
 import Faq from '../components/Faq';
+import Forms from '../components/Forms';
 
 function Home() {
   useEffect(() => {
@@ -146,37 +147,7 @@ function Home() {
         </div>
       </section>
 
-
-   <section id="contact" className="contact">
-   <div className="section-header">
-              <span>Envoyez-nous</span>
-              <h2>Envoyez-nous</h2>
-
-            </div>
-   <div className="form-contact row gy-4">
-            <div className="col-12">
-              <form action="forms/contact.php" method="post" role="form" className="php-email-form">
-                <div className="row">
-                  <div className="col-md-6 form-group">
-                    <input type="text" name="name" className="form-control" id="name" placeholder="Nom et prénom" required />
-                  </div>
-                  <div className="col-md-6 form-group mt-3 mt-md-0">
-                    <input type="email" className="form-control" name="email" id="email" placeholder="Email" required />
-                  </div>
-                </div>
-                <div className="form-group mt-3">
-                  <input type="text" className="form-control" name="subject" id="subject" placeholder="Sujet" required />
-                </div>
-                <div className="form-group mt-3">
-                  <textarea className="form-control" name="message" rows="5" placeholder="Message" required></textarea>
-                </div>
-    
-                <div className="text-center"><button type="submit">Envoyer Message</button></div>
-              </form>
-            </div>
-
-          </div>
-   </section>
+   <Forms />
     </div>
   )
 }

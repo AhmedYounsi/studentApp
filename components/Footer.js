@@ -2,7 +2,8 @@ import React, { useEffect } from 'react'
 import { FaFacebookF, FaTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa'
 import Link from 'next/link'
 import { useRouter } from 'next/router';
-import Image from 'next/image';
+import {BsFillPinMapFill,BsFillTelephoneFill} from 'react-icons/bs'
+import {GrMail} from 'react-icons/gr'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 function Footer() {
@@ -17,7 +18,7 @@ function Footer() {
     <footer id="footer" className="footer">
       <div className="back-about"></div>
       <div className="container">
-        <div className="row gy-4 over-hidden">
+        <div className="row gy-4 over-hidden row-footer">
           <div data-aos="fade-right" className="col-md-4 col-12 footer-info">
             <a href="index.html" className="logo d-flex align-items-center">
               <img src="/assets/img/aprims_white_2.png" alt="" />
@@ -44,7 +45,7 @@ function Footer() {
             </div>
           </div>
 
-          <div data-aos="fade-up" className=" col-md-4 col-sm-6 col-12 footer-links">
+          <div data-aos="fade-up" className=" col-md-4 col-sm-6 col-5 footer-links">
             <h4>Liens utiles</h4>
             <ul>
               <li>
@@ -74,20 +75,23 @@ function Footer() {
             </ul>
           </div>
 
-          <div data-aos="fade-right" className="col-md-4 col-sm-6 col-12  footer-links">
+          <div data-aos="fade-right" className="col-md-4 col-sm-6 col-7  footer-links">
             <h4>Contact</h4>
-            <ul>
-              <li>A108 Adam Street New York, NY 535022 <br />
-                United States <br /></li>
-              <li> <b>Téléphone : </b> +1 5589 55488 55 <br />
+            <ul className='icons-contact'>
+              <li>
+                <BsFillPinMapFill />
+              <p className='m-0'>  A108 Adam NY 535022 <br />United States </p></li>
+              <li>
+                <BsFillTelephoneFill />
+                +1 5589 55488 55 <br />
               </li>
               <li>
-                <b>Email : </b> info@example.com <br /></li>
+               <GrMail /> 
+                 info@example.com <br /></li>
             </ul>
           </div>
         </div>
       </div>
-
       <div className="container mt-4">
         <div className="copyright">
           &copy; Copyright <strong><span>APRIMS</span></strong>. Tous les droits sont réservés

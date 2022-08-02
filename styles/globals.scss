@@ -177,6 +177,31 @@ a {
 .active{
     color: white !important;
 }
+.alert-div{
+    padding: 10px 10px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    svg{        
+    font-size: 25px;
+    margin-right: 3px;
+
+    }
+}
+.success{
+    background: #abddc6;
+    color: #0f5132;
+}
+.danger{
+    color: #dc3545;
+    background: #ffd0d4;
+}
+.error_input {
+    border: 1px solid #db4352 !important;
+    outline: none;
+}
 .faq{
     .accordion-button svg{
         font-size: 20px;
@@ -189,6 +214,18 @@ a {
     transform: translateX(0%) !important;
 }
 
+.footer-info ,.footer-links{
+align-self: flex-start;
+}
+.footer-links{
+    .icons-contact{
+        svg{
+            font-size: 25px;
+            margin-right: 10px;
+            width: 40px;
+        }
+    }
+}
 @media screen and (min-width: 900px) {
     .icon-menu {
         display: none;
