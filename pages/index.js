@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Head from 'next/head';
 import Faq from '../components/Faq';
 import Forms from '../components/Forms';
-
+import Slider from '../components/Slider';
 function Home() {
   useEffect(() => {
     AOS.init();
@@ -16,54 +16,7 @@ function Home() {
         <Head>
         <title>APRIM Agir Pour la Révolution Industrielle et Monaitére et Sociale</title>
       </Head>
-      <section id="hero" className="hero d-flex align-items-center">
-        <div className="container">
-          <div className="row gy-4 d-flex justify-content-between">
-            <div
-              data-aos="flip-left"
-              className=" col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
-              <h1>Agir Pour la Révolution Industrielle et Monaitére et Sociale</h1>
-              <p>
-                La mission de APRIMS est de mettre en relation professionnels et entrepreneurs
-                afin d{"'"}agir comme catalyseur du développement économique
-              </p>
-
-              <form action="#" className="form-search d-flex align-items-stretch mb-3"  >
-                <input type="text" className="form-control" placeholder="S'inscrire à notre newsletter" />
-                <button type="submit" className="btn btn-primary">S{"'"}inscrire</button>
-              </form>
-
-              <div className="row gy-4 justify-content-center"  >
-
-                <div className="col-lg-3 col-4 p-0">
-                  <div className="stats-item text-center w-100 h-100">
-                    <span className="purecounter">130</span>
-                    <p>Entrepreneurs</p>
-                  </div>
-                </div>
-
-                <div className="col-lg-3 col-3">
-                  <div className="stats-item text-center w-100 h-100">
-                    <span className="purecounter">68</span>
-                    <p>Projets</p>
-                  </div>
-                </div>
-
-                <div className="col-lg-3 col-3">
-                  <div className="stats-item text-center w-100 h-100">
-                    <span className="purecounter">152</span>
-                    <p>Support</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div data-aos="flip-right" className="col-lg-5 order-1 order-lg-2 hero-img" >
-              <img src="/assets/img/visuel_blog_seul.png" className="img-fluid mb-3 mb-lg-0" alt="0" />
-            </div>
-          </div>
-        </div>
-      </section>
+     <Slider />
       <section id="about" className="about">
         <div className='back-about'></div>
         <div className="container" >

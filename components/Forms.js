@@ -70,13 +70,12 @@ function Forms() {
     }
 
     return (
-
         <section id="contact" className="contact">
-            <div className="section-header">
+            <div data-aos="fade-up"  className="section-header">
                 <span>Envoyez-nous</span>
                 <h2>Envoyez-nous</h2>
             </div>
-            <div className="form-contact row gy-4">
+            <div data-aos="fade-up"  className="form-contact row gy-4">
                 <div className="col-12">
                     {Error && <div
                         onClick={() => setError(null)}

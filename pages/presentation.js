@@ -31,12 +31,12 @@ function Presentation() {
               économique
             </p>
           </div>
-          <div data-aos="fade-up" className="row gy-4">
-            <div className="col-lg-6 position-relative order-lg-last order-first">
+          <div className="row gy-4">
+            <div data-aos="fade-right"  className="col-lg-6 position-relative order-lg-last order-first">
               <img src="assets/img/professionnels et entrepreneurs.webp" className="img-fluid video-image" alt="" />
               <a href="" className="glightbox play-btn"></a>
             </div>
-            <div className="col-lg-6 content order-last  order-lg-first">
+            <div data-aos="fade-left"  className="col-lg-6 content order-last  order-lg-first">
               <ul className='about-items'>
                 <li>
                   <img src="/assets/img/icons/icone_4.png" alt="" />

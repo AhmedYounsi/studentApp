@@ -45,7 +45,7 @@ function Footer() {
             </div>
           </div>
 
-          <div data-aos="fade-up" className=" col-md-4 col-sm-6 col-5 footer-links">
+          <div data-aos="fade-right" className=" col-md-4 col-sm-6 col-5 footer-links">
             <h4>Liens utiles</h4>
             <ul>
               <li>
@@ -75,7 +75,7 @@ function Footer() {
             </ul>
           </div>
 
-          <div data-aos="fade-right" className="col-md-4 col-sm-6 col-7  footer-links">
+          <div data-aos="fade-left" className="col-md-4 col-sm-6 col-7  footer-links">
             <h4>Contact</h4>
             <ul className='icons-contact'>
               <li>
@@ -93,7 +93,7 @@ function Footer() {
         </div>
       </div>
       <div className="container mt-4">
-        <div className="copyright">
+        <div  className="copyright">
           &copy; Copyright <strong><span>APRIMS</span></strong>. Tous les droits sont réservés
         </div>
 

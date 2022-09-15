@@ -8,7 +8,7 @@ function Breadcrumbs(props) {
   }, [])
   return (
     <div className="breadcrumbs">
-    <div  className="page-header d-flex align-items-center">
+    <div className="page-header d-flex align-items-center">
       <div data-aos="flip-left"  className="container position-relative">
         <h1 > {props.title}
         <br />
