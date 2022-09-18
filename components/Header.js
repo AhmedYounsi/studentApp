@@ -103,7 +103,7 @@ function Header() {
                 <a className={Active("/contact")}>Contact</a>
               </Link>
             </li>
-            <li><a className="get-a-quote" href="#">Connextion</a></li>
+            <li><a className="get-a-quote" href="#">Devenir adhérent ?</a></li>
           </ul>
         </nav>
 

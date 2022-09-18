@@ -15,13 +15,13 @@ function Presentation() {
         title2="et les entrepreneurs"
       />
       <section id="about" className="about">
-
+       
         <div className="container" >
 
           <div data-aos="fade-up">
             <div className="section-header">
-              <span>Révolution Industrielle et Monaitére et Sociale</span>
-              <h2>Révolution Industrielle et Monaitére et Sociale</h2>
+              <span>Révolution Industrielle </span>
+              <h2>Révolution Industrielle et Monétaire et Sociale</h2>
             </div>
             <p className='text'>
               APRIMS est un réseau international des professionnels et des entrepreneurs

@@ -14,7 +14,7 @@ function Home() {
   return (
     <div className='_Home'>
         <Head>
-        <title>APRIM Agir Pour la Révolution Industrielle et Monaitére et Sociale</title>
+        <title>APRIM Agir Pour la Révolution Industrielle et Monétaire et Sociale</title>
       </Head>
      <Slider />
       <section id="about" className="about">

@@ -42,7 +42,7 @@ function Slider() {
                     <div
                         data-aos="flip-left"
                         className=" col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
-                        <h1>Agir Pour la Révolution Industrielle et Monaitére et Sociale</h1>
+                        <h1>Agir Pour la Révolution Industrielle et Monétaire et Sociale</h1>
                         <p>
                             La mission de APRIMS est de mettre en relation professionnels et entrepreneurs
                             afin d{"'"}agir comme catalyseur du développement économique
