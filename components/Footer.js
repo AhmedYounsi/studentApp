@@ -24,8 +24,7 @@ function Footer() {
               <img src="/assets/img/aprims_white_2.png" alt="" />
             </a>
             <p>
-              APRIMS est un réseau international des professionnels et des entrepreneurs
-              ambitieux et compétents qui évoluent dans différents secteurs économiques. Nous
+              APRIMS est réseau d'affaires d'influence qui évolue dans différents secteurs économiques. Nous
               travaillons selon nos objectifs et nos valeurs communes
               afin de contribuer notre expertise au développement économique
             </p>
