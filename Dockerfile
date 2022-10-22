@@ -10,4 +10,4 @@ COPY . /usr/src/app
 RUN npm run build
 EXPOSE 3000
 
-ENTRYPOINT ["npm", "run"]
+ENTRYPOINT ["npm", "start"]
