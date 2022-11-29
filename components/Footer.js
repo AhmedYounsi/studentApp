@@ -2,8 +2,8 @@ import React, { useEffect } from 'react'
 import { FaFacebookF, FaTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa'
 import Link from 'next/link'
 import { useRouter } from 'next/router';
-import {BsFillPinMapFill,BsFillTelephoneFill} from 'react-icons/bs'
-import {GrMail} from 'react-icons/gr'
+import { BsFillPinMapFill, BsFillTelephoneFill } from 'react-icons/bs'
+import { GrMail } from 'react-icons/gr'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 function Footer() {
@@ -79,20 +79,22 @@ function Footer() {
             <ul className='icons-contact'>
               <li>
                 <BsFillPinMapFill />
-              <p className='m-0'>  A108 Adam NY 535022 <br />United States </p></li>
+                <p className='m-0'> 40 rue Alexandre Dumas 75011 Paris</p></li>
               <li>
                 <BsFillTelephoneFill />
-                +1 5589 55488 55 <br />
+                00337510523337
+                <br />
               </li>
               <li>
-               <GrMail /> 
-                 info@example.com <br /></li>
+                <GrMail />
+                info@aprims.org
+                <br /></li>
             </ul>
           </div>
         </div>
       </div>
       <div className="container mt-4">
-        <div  className="copyright">
+        <div className="copyright">
           &copy; Copyright <strong><span>APRIMS</span></strong>. Tous les droits sont réservés
         </div>
 
