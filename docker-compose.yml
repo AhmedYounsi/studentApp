@@ -1,0 +1,19 @@
+version: '3.7'
+services:
+  aprims:
+    build: .
+    labels:
+      - traefik.enable=true
+      - traefik.docker.network=traefik
+      - traefik.http.routers.aprims.entrypoints=websecure, web
+      - traefik.http.routers.aprims.rule=Host(`aprims.org`)
+      - traefik.http.routers.aprims.tls=true
+      - traefik.http.routers.aprims.tls.certresolver=production
+      - traefik.http.services.aprims.loadbalancer.server.port=3000
+      - traefik.http.routers.aprims.middlewares=chain-secure@file
+    networks:
+      - traefik
+    restart: unless-stopped
+networks:
+    traefik:
+      external: true
