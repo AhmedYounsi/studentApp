@@ -1,108 +1,99 @@
-import React, { useEffect } from 'react'
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-import Link from 'next/link';
-import Head from 'next/head';
-import Faq from '../components/Faq';
-import Forms from '../components/Forms';
-import Slider from '../components/Slider';
+import React, { useEffect, useState } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import Head from "next/head";
+import Slider from "../components/Slider";
+import axios from "axios";
+import AddStudent from "../components/addStudent";
+
 function Home() {
+  const [student, setstudent] = useState([]);
+  const [studentLenght, setstudentLenght] = useState(0);
+
   useEffect(() => {
     AOS.init();
-  }, [])
+    getStudent();
+  }, []);
+
+  const getStudent = async () => {
+    const response = await axios.get(
+      "http://localhost:5000/api/getAllStudents"
+    );
+    setstudent(response.data.reverse());
+    setstudentLenght(response.data.length);
+  };
+  const deleteStudent = async (item) => {
+    const res = await axios.post(
+      "http://localhost:5000/api/deleteStudent",
+      item
+    );
+    if (res.status === 200) {
+      getStudent();
+    }
+  };
+
+  const handleChildClick = async (dataFromChild) => {
+    const res = await axios.post(
+      "http://localhost:5000/api/addStudent",
+      dataFromChild
+    );
+    if (res.status === 200) {
+      getStudent();
+    }
+  };
 
   return (
-    <div className='_Home'>
-        <Head>
-        <title>APRIM Agir Pour la Révolution Industrielle et Monétaire et Sociale</title>
+    <div className="_Home">
+      <Head>
+        <title>Student API</title>
       </Head>
-     <Slider />
-      <section id="about" className="about">
-        <div className='back-about'></div>
-        <div className="container" >
+      <Slider student={student} />
+      <AddStudent onChildClick={handleChildClick} />
 
-          <div data-aos="fade-up">
-            <div className="section-header">
-              <span>Présentation</span>
-              <h2>Présentation</h2>
-            </div>  
-            <p className='text'>
-              APRIMS est un réseau international des professionnels et des entrepreneurs
-              ambitieux et compétents qui évoluent dans différents secteurs
-              économiques. Nous travaillons selon nos objectifs et nos valeurs
-              communes afin de contribuer notre expertise au développement
-              économique
-            </p>
-          </div>
-          <div className="row gy-4">
-            <div data-aos="fade-up-left" className="col-lg-6 position-relative order-lg-last order-first">
-              <img src="assets/img/professionnels et entrepreneurs.webp" className="img-fluid video-image" alt="" />
-              <a href="" className="glightbox play-btn"></a>
-            </div>
-            <div data-aos="fade-up-right" className="col-lg-6 content order-last  order-lg-first">
-              <ul className='about-items'>
-                <li>
-                  <img src="/assets/img/icons/icone_4.png" alt="" />
-                  <div>
-                    <h3>Les influenceurs d{"'"}opinion publique</h3>
-                    <p>Nous identifions et mobilisons la diaspora, ainsi que faisons du lobbying dans différentes villes à travers le monde. </p>
-                  </div>
-                </li>
-                <li>
-                  <img src="/assets/img/icons/icone_1.png" alt="" />
-                  <div>
-                    <h3>Les professionnels d{"'"}un secteur économique</h3>
-                    <p>Nous mettons en contact des professionnels et des entrepreneurs dans le business dans de nombreuses villes.</p>
-                  </div>
-                </li>
-                <li >
-                  <img src="/assets/img/icons/icone_0.png" alt="" />
-                  <div>
-                    <h3>Les entrepreneurs et les porteurs de projet</h3>
-                    <p>Nous offrons notre expertise pour aider les entreprises à faire le business dans la diaspora.</p>
-                  </div>
-                </li>
-                <li >
-                  <img src="/assets/img/icons/icone_2.png" alt="" />
-                  <div>
-                    <h3>La création d{"'"}emplois dans l{"'"}économie</h3>
-                    <p>Nous développons des projets qui contribuent à la création d{"'"}emplois et à la croissance économique</p>
-                  </div>
-                </li>
-
-              </ul>
-            </div>
-          </div>
-
+      <section className="student-list container">
+        <div className="section-header">
+          <span>Students List</span>
+          <h2>Students List</h2>
         </div>
+        <table className="table">
+          <thead>
+            <tr>
+              <th scope="col">First Name</th>
+              <th scope="col">Last Name</th>
+              <th scope="col">Email</th>
+              <th scope="col">Department</th>
+              <th scope="col">Grade</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+
+          <tbody>
+            {student.map((item, index) => (
+              <tr key={index}>
+                <td>{item.first_name}</td>
+                <td>{item.last_name}</td>
+                <td>{item.email}</td>
+                <td>{item.department}</td>
+                <td>{item.grade}</td>
+                <td>
+                  <button
+                    onClick={() => deleteStudent(item)}
+                    type="button"
+                    className="btn btn-outline-danger"
+                  >
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        {student.length === 0 && (
+          <div className="col-12 no-data-message">No student to display</div>
+        )}
       </section>
-      <section id="call-to-action" className="call-to-action">
-        <div className="container" data-aos="zoom-out">
-
-          <div className="row justify-content-center">
-            <div className="col-lg-8 text-center">
-            <div className="section-header">
-              <span>Nos actions</span>
-              <h2>Nos actions</h2>
-
-            </div>
-              <p>
-                Gagner de nouveaux contacts, enrichir votre réseau professionnel
-                et soigner votre communication font également partie de votre job de chef d{"'"}entreprise.
-                Vous disposez de toute l{"'"}information de nos actions dont vous avez besoin dans
-                le cadre de votre projet entrepreneurial.</p>
-              <Link href="actions">
-                <a className='cta-btn'>Voir plus</a>
-              </Link>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-   <Forms />
     </div>
-  )
+  );
 }
 
-export default Home
+export default Home;
