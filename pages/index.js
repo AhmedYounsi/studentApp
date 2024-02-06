@@ -1,14 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Head from "next/head";
 import Slider from "../components/Slider";
 import axios from "axios";
 import AddStudent from "../components/addStudent";
+import EditStudent from "../components/EditStudent";
+import { Toast } from "primereact/toast";
 
 function Home() {
   const [student, setstudent] = useState([]);
-  const [studentLenght, setstudentLenght] = useState(0);
+  const [dialogDisplay, setdialogDisplay] = useState(null);
+  const toast = useRef(null);
 
   useEffect(() => {
     AOS.init();
@@ -20,36 +23,67 @@ function Home() {
       "http://localhost:5000/api/getAllStudents"
     );
     setstudent(response.data.reverse());
-    setstudentLenght(response.data.length);
   };
+
   const deleteStudent = async (item) => {
     const res = await axios.post(
       "http://localhost:5000/api/deleteStudent",
       item
     );
     if (res.status === 200) {
+      toast.current.show({
+        severity: "success",
+        summary: res.data,
+        life: 3000,
+      });
       getStudent();
     }
   };
+  const updateStudent = async (item, id) => {
+    const res = await axios.post("http://localhost:5000/api/updateStudent", {
+      item,
+      id,
+    });
+    if (res.status === 200) {
+      toast.current.show({
+        severity: "success",
+        summary: res.data,
+        life: 3000,
+      });
 
-  const handleChildClick = async (dataFromChild) => {
+      getStudent();
+      setdialogDisplay(null);
+    }
+  };
+  const addStudent = async (dataFromChild) => {
     const res = await axios.post(
       "http://localhost:5000/api/addStudent",
       dataFromChild
     );
     if (res.status === 200) {
+      toast.current.show({
+        severity: "success",
+        summary: res.data,
+        life: 3000,
+      });
       getStudent();
     }
   };
 
   return (
     <div className="_Home">
+      <Toast ref={toast} />
+
       <Head>
         <title>Student API</title>
       </Head>
       <Slider student={student} />
-      <AddStudent onChildClick={handleChildClick} />
-
+      <AddStudent onChildClick={addStudent} />
+      <EditStudent
+        onChildClick={updateStudent}
+        dialogDisplay={dialogDisplay}
+        onHideDialog={() => setdialogDisplay(null)}
+      />
       <section className="student-list container">
         <div className="section-header">
           <span>Students List</span>
@@ -82,6 +116,13 @@ function Home() {
                     className="btn btn-outline-danger"
                   >
                     Delete
+                  </button>
+                  <button
+                    onClick={() => setdialogDisplay(item)}
+                    type="button"
+                    className="btn btn-outline-warning"
+                  >
+                    Update
                   </button>
                 </td>
               </tr>

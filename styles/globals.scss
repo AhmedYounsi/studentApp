@@ -151,8 +151,11 @@ a {
 }
 table .btn-outline-danger {
   padding: 0 10px;
+  margin-right: 5px;
 }
-
+table .btn-outline-warning {
+  padding: 0 10px;
+}
 .submit-btn {
   background: #0e1d34 !important;
   border-color: #0e1d34 !important;
@@ -242,6 +245,37 @@ table .btn-outline-danger {
       font-size: 25px;
       margin-right: 10px;
       width: 40px;
+    }
+  }
+}
+
+.p-toast-message-content {
+  display: flex;
+  align-items: center;
+  svg {
+    width: 20px;
+  }
+}
+
+.p-dialog-center {
+  background-color: #00000047;
+  .p-dialog {
+    background-color: white;
+    border-radius: 4px;
+    overflow: auto;
+    &-header {
+      background: #0e1d34;
+      padding: 10px 20px;
+      color: white;
+      font-weight: 600;
+      &-icons {
+        svg {
+          color: white;
+        }
+      }
+    }
+    &-content {
+      padding: 10px 20px;
     }
   }
 }

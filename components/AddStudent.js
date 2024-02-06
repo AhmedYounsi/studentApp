@@ -10,6 +10,7 @@ function AddStudent(props) {
     grade: "",
   };
   const [formData, setFormData] = useState(initialFormData);
+  const [emptyFields, setemptyFields] = useState([]);
 
   const handleChange = (e) => {
     setFormData({
@@ -27,9 +28,21 @@ function AddStudent(props) {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setFormData(initialFormData);
-    props.onChildClick(formData);
+    let arr = [];
+    for (const key in formData) {
+      if (formData.hasOwnProperty(key) && formData[key] === "") {
+        arr.push(key);
+      }
+    }
+    console.log(arr.length);
+    if (arr.length > 0) {
+      console.log("The following fields are empty:", emptyFields);
+    } else {
+      setFormData(initialFormData);
+      props.onChildClick(formData);
+    }
   };
+
   return (
     <section className="student-add container">
       <div className="section-header">

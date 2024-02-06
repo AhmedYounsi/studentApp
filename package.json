@@ -18,6 +18,7 @@
     "nextjs-progressbar": "^0.0.14",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-preset-env": "^7.7.2",
+    "primereact": "^10.4.0",
     "react": "18.2.0",
     "react-collapsible": "^2.10.0",
     "react-dom": "18.2.0",

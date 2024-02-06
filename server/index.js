@@ -17,7 +17,7 @@ app.post("/api/addStudent", async (req, res) => {
   try {
     const newSudent = new student(req.body);
     await newSudent.save();
-    res.send(200);
+    res.status(200).send("Student added successfully !");
   } catch (error) {
     res.send(400);
   }
@@ -26,9 +26,23 @@ app.post("/api/addStudent", async (req, res) => {
 app.post("/api/deleteStudent", async (req, res) => {
   try {
     const result = await student.findByIdAndDelete(req.body._id);
-    console.log(result);
-    res.send(200);
-  } catch (error) {}
+    res.status(200).send("Student deleted successfully !");
+  } catch (error) {
+    res.send(400);
+  }
+});
+
+app.post("/api/updateStudent", async (req, res) => {
+  try {
+    const filter = { _id: req.body.id };
+    const update = req.body.item;
+    const result = await student.findOneAndUpdate(filter, update, {
+      new: true,
+    });
+    res.status(200).send("Student updated successfully !");
+  } catch (error) {
+    res.send(400);
+  }
 });
 
 // Route to get all students
