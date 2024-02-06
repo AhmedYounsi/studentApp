@@ -236,6 +236,14 @@ table .btn-outline-warning {
   width: 40px;
 }
 
+.label-grade {
+  display: flex;
+  flex-direction: column;
+}
+.label-grade .p-inputnumber-input {
+  height: 38px;
+}
+
 .p-toast-message-content {
   display: flex;
   align-items: center;

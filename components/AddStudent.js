@@ -1,13 +1,17 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
+import { InputNumber } from "primereact/inputnumber";
+import { Toast } from "primereact/toast";
 
 function AddStudent(props) {
+  const toast = useRef(null);
+
   const initialFormData = {
     first_name: "",
     last_name: "",
     age: "",
     email: "",
     department: "",
-    grade: "",
+    grade: 1,
   };
   const [formData, setFormData] = useState(initialFormData);
   const [emptyFields, setemptyFields] = useState([]);
@@ -26,15 +30,26 @@ function AddStudent(props) {
       department: e.target.value,
     });
   };
+  const handleGradeChange = (e) => {
+    setFormData({
+      ...formData,
+      grade: e,
+    });
+  };
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     let arr = [];
     for (const key in formData) {
       if (formData.hasOwnProperty(key) && formData[key] === "") {
         arr.push(key);
+        toast.current.show({
+          severity: "error",
+          summary: "Empty filed : " + key,
+          life: 2000,
+        });
       }
     }
-    console.log(arr.length);
     if (arr.length > 0) {
       console.log("The following fields are empty:", emptyFields);
     } else {
@@ -45,6 +60,8 @@ function AddStudent(props) {
 
   return (
     <section className="student-add container">
+      <Toast ref={toast} />
+
       <div className="section-header">
         <span>Add Student</span>
         <h2>Add Student</h2>
@@ -107,15 +124,14 @@ function AddStudent(props) {
         </div>
 
         <div className="row">
-          <label className="col-6">
+          <label className="col-6 label-grade">
             Grade:
-            <input
-              name="grade"
-              className="form-control"
+            <InputNumber
+              inputId="minmax"
+              onValueChange={(e) => handleGradeChange(e.value)}
               value={formData.grade}
-              onChange={handleChange}
-              type="number"
-              max="5"
+              min={1}
+              max={5}
             />
           </label>
 

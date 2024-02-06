@@ -249,6 +249,14 @@ table .btn-outline-warning {
   }
 }
 
+.label-grade {
+  display: flex;
+  flex-direction: column;
+  .p-inputnumber-input {
+    height: 38px;
+  }
+}
+
 .p-toast-message-content {
   display: flex;
   align-items: center;
